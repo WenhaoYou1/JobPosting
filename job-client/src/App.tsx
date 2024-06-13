@@ -4,7 +4,7 @@ import DisplayJobs from "./pages/DisplayJobs";
 import CreateJob from "./pages/CreateJob";
 import Details from "./pages/Details";
 import LoginPage from "./pages/LoginPage";
-import Register from "./pages/Register";
+import SignupPage from "./pages/SignupPage";
 import Header from "./components/Header";
 import Bottom from "./components/Bottom";
 function App() {
@@ -22,7 +22,7 @@ function App() {
 						/>
 					}
 				/>
-				<Route path="/register" element={<Register />} />
+				<Route path="/signup" element={<SignupPage />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route
 					path="/mypostings"

@@ -141,9 +141,9 @@ const Header = () => {
 											}}
 											color={"primary.third"}
 											component={RouterLink}
-											to="/register"
+											to="/signup"
 										>
-											Register
+											Signup
 										</Typography>
 									</Stack>
 								</>

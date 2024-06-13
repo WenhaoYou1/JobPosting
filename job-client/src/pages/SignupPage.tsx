@@ -1,20 +1,20 @@
 import { Box, Typography, Link as MuiLink } from "@mui/material";
-import LoginForm from "../components/Login/LoginForm";
+import SignupForm from "../components/Signup/SignupForm";
 import { Link } from "react-router-dom";
 
-const LoginPage = () => {
+const SignupPage = () => {
 	return (
 		<>
 			<Box sx={{ display: "flex", mb: 5, justifyContent: "center" }}>
-				<Typography variant="h1">Login</Typography>
+				<Typography variant="h1">Sign Up</Typography>
 			</Box>
-			<LoginForm />
+			<SignupForm />
 			<Box sx={{ display: "flex", mt: 3, justifyContent: "center" }}>
 				<Typography variant="body1">
-					Don't have an account?{" "}
+					Already have an account?{" "}
 					<MuiLink
 						component={Link}
-						to="/signup"
+						to="/login"
 						sx={{
 							color: "primary.secondary",
 							textDecoration: "underline",
@@ -24,7 +24,7 @@ const LoginPage = () => {
 							},
 						}}
 					>
-						Sign up
+						Log in
 					</MuiLink>
 				</Typography>
 			</Box>
@@ -32,4 +32,4 @@ const LoginPage = () => {
 	);
 };
 
-export default LoginPage;
+export default SignupPage;
