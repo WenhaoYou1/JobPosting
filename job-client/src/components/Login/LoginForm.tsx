@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { TextField, Box, InputAdornment, IconButton } from "@mui/material";
+import { TextField, Box, InputAdornment, IconButton, Snackbar, Alert } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -62,15 +62,21 @@ const LoginForm = () => {
 	// state for notification
 	const [open, setOpen] = useState(false);
 	const [text, setText] = useState("");
+	const [success, setSuccess] = useState(false);
+	const [error, setError] = useState(false);
 
 	useEffect(() => {
 		if (isError) {
+			setError(true);
 			setOpen(true);
 			setText(message);
 		}
 
 		if (isValid && user) {
-			navigate("/");
+			setSuccess(true);
+			setTimeout(() => {
+				navigate("/");
+			}, 1000); // navigate after 1 seconds
 		}
 
 		dispatch(reset());
@@ -136,6 +142,28 @@ const LoginForm = () => {
 					</LoadingButton>
 				</Box>
 			</FormProvider>
+
+			<Snackbar
+				open={success}
+				autoHideDuration={3000}
+				onClose={() => setSuccess(false)}
+				anchorOrigin={{ vertical: "top", horizontal: "center" }}
+			>
+				<Alert onClose={() => setSuccess(false)} severity="success" sx={{ width: "100%" }}>
+					Log in successfully...
+				</Alert>
+			</Snackbar>
+
+			<Snackbar
+				open={error}
+				autoHideDuration={3000}
+				onClose={() => setError(false)}
+				anchorOrigin={{ vertical: "top", horizontal: "center" }}
+			>
+				<Alert onClose={() => setError(false)} severity="error" sx={{ width: "100%" }}>
+					Login failed: {text}
+				</Alert>
+			</Snackbar>
 		</>
 	);
 };

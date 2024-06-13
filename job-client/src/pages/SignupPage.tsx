@@ -6,7 +6,7 @@ const SignupPage = () => {
 	return (
 		<>
 			<Box sx={{ display: "flex", mb: 5, justifyContent: "center" }}>
-				<Typography variant="h1">Sign Up</Typography>
+				<Typography variant="h1">Signup</Typography>
 			</Box>
 			<SignupForm />
 			<Box sx={{ display: "flex", mt: 3, justifyContent: "center" }}>
