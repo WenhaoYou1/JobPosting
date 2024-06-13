@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DisplayJobs from "./pages/DisplayJobs";
 import CreateJob from "./pages/CreateJob";
 import Details from "./pages/Details";
-import Login from "./pages/Login";
+import LoginPage from "./pages/LoginPage";
 import Register from "./pages/Register";
 import Header from "./components/Header";
 import Bottom from "./components/Bottom";
@@ -23,7 +23,7 @@ function App() {
 					}
 				/>
 				<Route path="/register" element={<Register />} />
-				<Route path="/login" element={<Login />} />
+				<Route path="/login" element={<LoginPage />} />
 				<Route
 					path="/mypostings"
 					element={
